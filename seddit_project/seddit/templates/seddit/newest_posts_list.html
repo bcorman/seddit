@@ -1,0 +1,36 @@
+{% extends 'seddit/base.html' %}
+
+{% block content %}
+
+<main>
+
+  {% for post in posts %}
+
+    <div class="post">
+
+      <div class="post-numbers">
+        {{ forloop.counter }}.
+      </div>
+
+      <div class="vote-arrows">
+        <!-- upvote and downvote -->
+        <i class="far fa-arrow-alt-circle-up"></i>
+        <i class="far fa-arrow-alt-circle-down"></i>
+      </div>
+
+      <div class="post-text">
+        <p class="post-title"><a href="#">{{ post.title }}</a></p>
+        <div class="post-metadata">
+          <p class="post-vote-count"> Vote Count: {{ post.vote_count }} </p>
+          <p class="post-timestamp"> Time Posted: {{ post.time_stamp }} </p>
+          <p class="post-author"> Author: {{ post.author }} </p>
+        </div>
+      </div>
+
+    </div>
+
+  {% endfor %}
+
+</main>
+
+{% endblock %}
